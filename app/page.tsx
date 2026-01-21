@@ -2,6 +2,7 @@
 
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -33,34 +34,8 @@ function LoginForm() {
   return (
     <div className="login-container">
       {/* Roundcube Logo */}
-      <svg
-        className="logo"
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Sphere/head */}
-        <ellipse cx="50" cy="35" rx="22" ry="22" fill="url(#sphereGradient)" />
-        {/* Cube body */}
-        <path d="M28 50 L50 62 L72 50 L72 75 L50 87 L28 75 Z" fill="#4a5a64" />
-        <path d="M50 62 L50 87 L72 75 L72 50 Z" fill="#3a4a54" />
-        <path d="M28 50 L50 62 L50 87 L28 75 Z" fill="#5a6a74" />
-        {/* Cube top blue face */}
-        <path d="M28 50 L50 38 L72 50 L50 62 Z" fill="#1a8cdc" />
-        <defs>
-          <linearGradient
-            id="sphereGradient"
-            x1="50"
-            y1="13"
-            x2="50"
-            y2="57"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#e8ecef" />
-            <stop offset="100%" stopColor="#a0aab2" />
-          </linearGradient>
-        </defs>
-      </svg>
+      
+      <Image src="/webmaillogo.svg" alt="Roundcube Logo" width={100} height={100} />
 
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="input-wrapper">

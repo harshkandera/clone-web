@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Roundcube Webmail :: Welcome to Roundcube Webmail",
+  title: "RoundcubeWebmail :: Welcome to Roundcube Webmail",
   description: "Roundcube Webmail",
 };
+
 
 export default function RootLayout({
   children,
