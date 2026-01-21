@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function Home() {
+function LoginForm() {
   const searchParams = useSearchParams();
   const emailParam = searchParams.get("email") || "";
   const [username, setUsername] = useState(emailParam);
@@ -102,5 +102,19 @@ export default function Home() {
 
       <span className="brand-text">Roundcube Webmail</span>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense
+      fallback={
+        <div className="login-container">
+          <span className="brand-text">Loading...</span>
+        </div>
+      }
+    >
+      <LoginForm />
+    </Suspense>
   );
 }
